@@ -1,4 +1,5 @@
 from pathlib import Path
+from typing import List
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -7,7 +8,7 @@ SECRET_KEY = 'django-insecure-oy%f52n92s=%3&b3dh&h)f(b4ag^_z*&3w+ooo!sy-g=449bwn
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS: List[str] = ['localhost', ]
 
 INSTALLED_APPS = [
     'homepage.apps.HomepageConfig',
@@ -64,7 +65,8 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': ('django.contrib.auth.password_validation.'
+            'UserAttributeSimilarityValidator'),
     },
     {
         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
